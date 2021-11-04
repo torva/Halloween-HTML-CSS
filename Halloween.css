@@ -1,0 +1,120 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -20px;
+  animation: inicio 5s ease-in-out forwards;
+}
+.container::after {
+  background: rgba(0, 0, 0, 0.5);
+  content: "";
+  position: absolute;
+  top: -1000px;
+  left: 50%;
+  margin-left: 9px;
+  width: 1px;
+  height: 1000px;
+}
+.container::before {
+  background: #000000;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 1.3em;
+  content: ".....";
+  position: absolute;
+  margin-top: -5px;
+  margin-left: -2px;
+  width: 25px;
+  height: 25px;
+}
+.left {
+  position: absolute;
+}
+.right {
+  position: absolute;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.first,
+.second,
+.third,
+.fourth {
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 20px;
+  height: 3px;
+}
+.first > .first,
+.second > .second,
+.third > .third,
+.fourth > .fourth {
+  transform-origin: 20px top;
+  -webkit-transform: rotate(-80deg) translateX(20px);
+  -moz-transform: rotate(-80deg) translateX(20px);
+  -ms-transform: rotate(-80deg) translateX(20px);
+  -o-transform: rotate(-80deg) translateX(20px);
+  transform: rotate(-80deg) translateX(20px);
+  animation: seg 2.5s ease infinite;
+}
+.first > .first > .first,
+.second > .second > .second,
+.third > .third > .third,
+.fourth > .fourth > .fourth {
+  transform-origin: 20px top;
+  -webkit-transform: rotate(10deg) translateX(20px);
+  -moz-transform: rotate(10deg) translateX(20px);
+  -ms-transform: rotate(10deg) translateX(20px);
+  -o-transform: rotate(10deg) translateX(20px);
+  transform: rotate(10deg) translateX(20px);
+  animation: seg 1.5s ease infinite;
+}
+.right > .second > .second {
+  animation-delay: 200ms;
+}
+.second > .second {
+  animation-delay: 400ms;
+}
+.second > .second > .second {
+  animation-delay: 200ms;
+}
+.right > .third > .third {
+  animation-delay: 400ms;
+}
+.third > .third {
+  animation-delay: 600ms;
+}
+.third > .third > .third {
+  animation-delay: 300ms;
+}
+.right > .fourth > .fourth {
+  animation-delay: 100ms;
+}
+.fourth > .fourth {
+  animation-delay: 800ms;
+}
+.fourth > .fourth > .fourth {
+  animation-delay: 400ms;
+}
+@-webkit-keyframes seg {
+  50% {
+    transform: rotate(55deg) translateX(20px);
+  }
+}
+@keyframes seg {
+  50% {
+    transform: rotate(55deg) translateX(20px);
+  }
+}
+@keyframes inicio {
+  100% {
+    top: 50%;
+  }
+}
